@@ -1,0 +1,146 @@
+{
+  "users": [
+    {
+      "id": "usr_admin_001",
+      "name": "Alexander Vance",
+      "email": "admin@veylora.com",
+      "passwordHash": "$2a$10$NjNN9d7VnSvNmRD7/wMwjewZkxMSMIJV5YgHDchjvqhQ0AuUhtzfG",
+      "role": "admin",
+      "phone": "+92 300 1112233",
+      "createdAt": "2026-10-15T23:34:20.935Z"
+    },
+    {
+      "id": "usr_client_002",
+      "name": "Tariq Mansoor",
+      "email": "user@veylora.com",
+      "passwordHash": "$2a$10$M8HtfnjzqxllVaw70EHgd.465J0CBFuzFmBzqlJvvHPqCfWAwc1gu",
+      "role": "user",
+      "phone": "+92 321 4455667",
+      "createdAt": "2026-11-04T23:34:20.935Z"
+    },
+    {
+      "name": "Daniyal Azhar",
+      "email": "smartydaniazhar234@gmail.com",
+      "phone": "+92 341 2006574",
+      "passwordHash": "$2a$12$dXh2aE04ct8PT../gnQhfeO/BmJvIOCK1w27rRdnxKCTgI45L4foO",
+      "role": "user",
+      "id": "usr_1794699262109_8gmk2",
+      "createdAt": "2026-11-14T23:34:22.109Z"
+    }
+  ],
+  "bookings": [
+    {
+      "id": "bkg_001",
+      "userId": "usr_client_002",
+      "userEmail": "user@veylora.com",
+      "userName": "Tariq Mansoor",
+      "userPhone": "+92 321 4455667",
+      "vehicleId": "civic-rs",
+      "vehicleName": "Honda Civic RS Turbo",
+      "preferredDate": "2026-11-16",
+      "preferredTime": "02:00 PM",
+      "driverLicenseNumber": "DL-PK-98214A",
+      "specialRequests": "Please prepare the Ignite Red trim with sport paddle demonstration.",
+      "status": "APPROVED",
+      "adminNotes": "VIP Concierge test drive confirmed. Assigned to Sophia Laurent.",
+      "createdAt": "2026-11-12T23:34:20.935Z",
+      "updatedAt": "2026-11-13T23:34:20.935Z",
+      "approvedBy": "admin@veylora.com"
+    },
+    {
+      "id": "bkg_002",
+      "userId": "usr_client_002",
+      "userEmail": "user@veylora.com",
+      "userName": "Tariq Mansoor",
+      "userPhone": "+92 321 4455667",
+      "vehicleId": "honda-cg125",
+      "vehicleName": "Honda CG 125 Special Edition",
+      "preferredDate": "2026-11-19",
+      "preferredTime": "10:00 AM",
+      "driverLicenseNumber": "DL-PK-98214A",
+      "specialRequests": "Requesting Golden Edition 5-Speed test ride.",
+      "status": "PENDING",
+      "adminNotes": "Awaiting bay inspection clearance.",
+      "createdAt": "2026-11-14T11:34:20.935Z",
+      "updatedAt": "2026-11-14T11:34:20.935Z"
+    },
+    {
+      "id": "bkg_003",
+      "userId": "usr_external_003",
+      "userEmail": "hamza.sheikh@executive.pk",
+      "userName": "Hamza Sheikh",
+      "userPhone": "+92 333 5558899",
+      "vehicleId": "escalade-v",
+      "vehicleName": "Cadillac Escalade-V",
+      "preferredDate": "2026-11-17",
+      "preferredTime": "04:00 PM",
+      "driverLicenseNumber": "DL-ISB-44120",
+      "specialRequests": "Chauffeured pickup requested from Serena Hotel.",
+      "status": "PENDING",
+      "adminNotes": "Executive high-value enquiry.",
+      "createdAt": "2026-11-14T17:34:20.936Z",
+      "updatedAt": "2026-11-14T17:34:20.936Z"
+    },
+    {
+      "id": "bkg_004",
+      "userId": "usr_external_004",
+      "userEmail": "zainab.malik@speedcraft.pk",
+      "userName": "Zainab Malik",
+      "userPhone": "+92 301 9988776",
+      "vehicleId": "ducati-panigale-v4s",
+      "vehicleName": "Ducati Panigale V4 S",
+      "preferredDate": "2026-11-18",
+      "preferredTime": "12:00 PM",
+      "driverLicenseNumber": "DL-LHR-77610",
+      "specialRequests": "Track riding suit will be brought for safety verification.",
+      "status": "APPROVED",
+      "adminNotes": "Track gear and safety briefing scheduled.",
+      "createdAt": "2026-11-14T05:34:20.936Z",
+      "updatedAt": "2026-11-14T19:34:20.936Z",
+      "approvedBy": "admin@veylora.com"
+    }
+  ],
+  "auditLogs": [
+    {
+      "actorEmail": "smartydaniazhar234@gmail.com",
+      "actorRole": "user",
+      "action": "SIGNUP",
+      "details": "New user membership created for Daniyal Azhar (smartydaniazhar234@gmail.com)",
+      "ipAddress": "::ffff:169.254.128.145",
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+      "status": "SUCCESS",
+      "id": "log_1794699262138_5g73v",
+      "timestamp": "2026-11-14T23:34:22.138Z"
+    },
+    {
+      "id": "log_init_001",
+      "timestamp": "2026-11-13T23:34:20.936Z",
+      "actorEmail": "admin@veylora.com",
+      "actorRole": "admin",
+      "action": "LOGIN",
+      "details": "Admin session initialized securely via HTTPS __Host-veylora_token",
+      "ipAddress": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log_init_002",
+      "timestamp": "2026-11-14T03:34:20.936Z",
+      "actorEmail": "user@veylora.com",
+      "actorRole": "user",
+      "action": "BOOKING_CREATED",
+      "details": "Test drive booking requested for Honda Civic RS Turbo (FE1-VTEC-RS)",
+      "ipAddress": "127.0.0.1",
+      "status": "SUCCESS"
+    },
+    {
+      "id": "log_init_003",
+      "timestamp": "2026-11-14T08:34:20.936Z",
+      "actorEmail": "admin@veylora.com",
+      "actorRole": "admin",
+      "action": "BOOKING_APPROVED",
+      "details": "Booking bkg_001 approved by Executive Director Alexander Vance",
+      "ipAddress": "127.0.0.1",
+      "status": "SUCCESS"
+    }
+  ]
+}

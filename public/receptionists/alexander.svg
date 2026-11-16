@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#121318"/>
+      <stop offset="50%" stop-color="#0a0a0c"/>
+      <stop offset="100%" stop-color="#040507"/>
+    </linearGradient>
+    <radialGradient id="goldHalo2" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skinGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5CEB0"/>
+      <stop offset="100%" stop-color="#D89A76"/>
+    </linearGradient>
+    <linearGradient id="suitGrad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1f232b"/>
+      <stop offset="50%" stop-color="#14161c"/>
+      <stop offset="100%" stop-color="#0b0d10"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5AB"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9A7B1C"/>
+    </linearGradient>
+    <linearGradient id="tieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#DFC052"/>
+      <stop offset="50%" stop-color="#B89226"/>
+      <stop offset="100%" stop-color="#6E521B"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="750" fill="url(#bgGrad2)"/>
+  <circle cx="300" cy="250" r="230" fill="url(#goldHalo2)"/>
+
+  <!-- Architectural Background Elements -->
+  <line x1="120" y1="0" x2="120" y2="750" stroke="#D4AF37" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="480" y1="0" x2="480" y2="750" stroke="#D4AF37" stroke-opacity="0.08" stroke-width="1"/>
+  <rect x="200" y="80" width="200" height="300" rx="100" fill="none" stroke="#D4AF37" stroke-opacity="0.06" stroke-width="1"/>
+
+  <!-- Formal Shoulders / Bespoke Suit -->
+  <path d="M 90 750 L 130 460 C 145 400 210 380 255 375 L 300 410 L 345 375 C 390 380 455 400 470 460 L 510 750 Z" fill="url(#suitGrad2)"/>
+
+  <!-- Lapels -->
+  <polygon points="245,380 285,550 300,550 260,375" fill="#252b36" stroke="#363e4e" stroke-width="0.5"/>
+  <polygon points="355,380 315,550 300,550 340,375" fill="#252b36" stroke="#363e4e" stroke-width="0.5"/>
+
+  <!-- White Crisp Collar Shirt -->
+  <polygon points="275,370 325,370 300,430" fill="#FFFFFF"/>
+  <polygon points="280,370 260,395 285,395" fill="#F0F0F0"/>
+  <polygon points="320,370 340,395 315,395" fill="#F0F0F0"/>
+
+  <!-- Gold Silk Tie -->
+  <polygon points="293,390 307,390 312,410 300,420 288,410" fill="url(#tieGrad)"/>
+  <polygon points="292,415 308,415 314,560 300,580 286,560" fill="url(#tieGrad)"/>
+  <!-- Gold Tie Bar Clip -->
+  <rect x="290" y="465" width="20" height="4" rx="2" fill="url(#goldAccent)" filter="url(#glow)"/>
+
+  <!-- Pocket Square & Gold Lapel Pin -->
+  <polygon points="215,445 235,435 240,448" fill="#F9F2D7"/>
+  <circle cx="248" cy="410" r="5" fill="url(#goldAccent)" filter="url(#glow)"/>
+
+  <!-- Neck -->
+  <rect x="275" y="300" width="50" height="80" rx="8" fill="url(#skinGrad2)"/>
+  <ellipse cx="300" cy="320" rx="24" ry="12" fill="#000000" opacity="0.12"/>
+
+  <!-- Short Professional Hair (Back) -->
+  <path d="M 225 240 C 225 140 260 115 300 115 C 340 115 375 140 375 240 C 375 270 370 290 365 310 L 235 310 C 230 290 225 270 225 240 Z" fill="#26211C"/>
+
+  <!-- Face / Jawline -->
+  <path d="M 240 215 C 240 295 260 330 300 330 C 340 330 360 295 360 215 C 360 160 338 140 300 140 C 262 140 240 160 240 215 Z" fill="url(#skinGrad2)"/>
+
+  <!-- Hair Cut & Sideburns -->
+  <path d="M 235 210 C 235 150 265 125 300 125 C 345 125 365 150 365 190 C 350 170 330 155 295 155 C 265 155 245 175 240 200 Z" fill="#3B322A"/>
+  <rect x="238" y="210" width="6" height="35" fill="#3B322A"/>
+  <rect x="356" y="210" width="6" height="35" fill="#3B322A"/>
+
+  <!-- Eyes & Sharp Eyebrows -->
+  <path d="M 260 198 Q 275 192 290 196" stroke="#221B14" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <path d="M 310 196 Q 325 192 340 198" stroke="#221B14" stroke-width="3.5" fill="none" stroke-linecap="round"/>
+  <ellipse cx="275" cy="210" rx="6.5" ry="4.5" fill="#2A383D"/>
+  <ellipse cx="325" cy="210" rx="6.5" ry="4.5" fill="#2A383D"/>
+  <circle cx="277" cy="209" r="1.5" fill="#FFFFFF"/>
+  <circle cx="327" cy="209" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Glasses - Sleek Gold-rimmed Luxury Eyewear -->
+  <rect x="256" y="200" width="36" height="22" rx="5" fill="none" stroke="url(#goldAccent)" stroke-width="1.8"/>
+  <rect x="308" y="200" width="36" height="22" rx="5" fill="none" stroke="url(#goldAccent)" stroke-width="1.8"/>
+  <line x1="292" y1="208" x2="308" y2="208" stroke="url(#goldAccent)" stroke-width="1.8"/>
+  <line x1="256" y1="206" x2="240" y2="206" stroke="url(#goldAccent)" stroke-width="1.5"/>
+  <line x1="344" y1="206" x2="360" y2="206" stroke="url(#goldAccent)" stroke-width="1.5"/>
+
+  <!-- Nose -->
+  <path d="M 300 208 L 297 240 L 305 240" stroke="#B8805E" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Confident Smile -->
+  <path d="M 284 272 Q 300 282 316 272" stroke="#854838" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Name Badge Overlay -->
+  <rect x="70" y="640" width="460" height="75" rx="8" fill="#0A0A0C" fill-opacity="0.9" stroke="url(#goldAccent)" stroke-width="1"/>
+  <text x="300" y="670" font-family="'Geist Sans', sans-serif" font-weight="700" font-size="20" fill="#F9F2D7" text-anchor="middle" letter-spacing="2">ALEXANDER VANCE</text>
+  <text x="300" y="694" font-family="'Geist Sans', sans-serif" font-weight="400" font-size="12" fill="#D4AF37" text-anchor="middle" letter-spacing="3">DIRECTOR OF CLIENT EXPERIENCE</text>
+</svg>

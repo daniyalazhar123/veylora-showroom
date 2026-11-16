@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#181518"/>
+      <stop offset="50%" stop-color="#0c0b0d"/>
+      <stop offset="100%" stop-color="#050406"/>
+    </linearGradient>
+    <radialGradient id="goldHalo3" cx="50%" cy="32%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skinGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFE0CC"/>
+      <stop offset="100%" stop-color="#E2B193"/>
+    </linearGradient>
+    <linearGradient id="suitGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#211d26"/>
+      <stop offset="50%" stop-color="#141117"/>
+      <stop offset="100%" stop-color="#0c0a0f"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5AB"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9A7B1C"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="750" fill="url(#bgGrad3)"/>
+  <circle cx="300" cy="270" r="230" fill="url(#goldHalo3)"/>
+
+  <!-- Showroom ambience lines -->
+  <line x1="90" y1="0" x2="90" y2="750" stroke="#D4AF37" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="510" y1="0" x2="510" y2="750" stroke="#D4AF37" stroke-opacity="0.08" stroke-width="1"/>
+  <circle cx="300" cy="280" r="180" fill="none" stroke="#D4AF37" stroke-opacity="0.06" stroke-width="1.5" stroke-dasharray="8 8"/>
+
+  <!-- Formal Attire - Tailored Haute Couture Tuxedo Jacket -->
+  <path d="M 115 750 L 145 500 C 155 435 215 415 255 410 L 300 450 L 345 410 C 385 415 445 435 455 500 L 485 750 Z" fill="url(#suitGrad3)"/>
+
+  <!-- Satin Revers Collar with Gold piping -->
+  <path d="M 235 415 L 295 600 L 300 600 L 255 410 Z" fill="#2d2833" stroke="url(#goldAccent)" stroke-width="1"/>
+  <path d="M 365 415 L 305 600 L 300 600 L 345 410 Z" fill="#2d2833" stroke="url(#goldAccent)" stroke-width="1"/>
+
+  <!-- Gold Pendant Necklace -->
+  <path d="M 270 425 Q 300 475 330 425" stroke="url(#goldAccent)" stroke-width="2" fill="none"/>
+  <polygon points="300,470 307,485 300,500 293,485" fill="url(#goldAccent)" filter="url(#glow)"/>
+
+  <!-- Neck -->
+  <rect x="278" y="345" width="44" height="75" rx="10" fill="url(#skinGrad3)"/>
+  <ellipse cx="300" cy="360" rx="22" ry="10" fill="#000000" opacity="0.12"/>
+
+  <!-- Hair (Sleek Bun / Updo) -->
+  <circle cx="300" cy="150" r="75" fill="#1A1513"/>
+  <ellipse cx="300" cy="265" rx="105" ry="110" fill="#241D1A"/>
+
+  <!-- Face -->
+  <path d="M 240 250 C 240 330 265 365 300 365 C 335 365 360 330 360 250 C 360 190 335 175 300 175 C 265 175 240 190 240 250 Z" fill="url(#skinGrad3)"/>
+
+  <!-- Sleek Dark Espresso Hair with subtle highlights -->
+  <path d="M 235 245 C 235 175 265 145 300 145 C 335 145 365 175 365 245 C 360 205 340 175 300 175 C 260 175 240 205 235 245 Z" fill="#2E231F"/>
+  <!-- Gold Hair Ornament / Pin -->
+  <line x1="330" y1="135" x2="365" y2="155" stroke="url(#goldAccent)" stroke-width="3" filter="url(#glow)"/>
+
+  <!-- Eyes & Elegant Eyebrows -->
+  <path d="M 262 232 Q 275 225 288 230" stroke="#2B1A12" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 312 230 Q 325 225 338 232" stroke="#2B1A12" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <ellipse cx="275" cy="242" rx="6" ry="4" fill="#3D4536"/>
+  <ellipse cx="325" cy="242" rx="6" ry="4" fill="#3D4536"/>
+  <circle cx="277" cy="241" r="1.5" fill="#FFFFFF"/>
+  <circle cx="327" cy="241" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Delicate winged eyeliner -->
+  <path d="M 283 241 Q 288 238 290 236" stroke="#120D0A" stroke-width="1.8" fill="none"/>
+  <path d="M 333 241 Q 338 238 340 236" stroke="#120D0A" stroke-width="1.8" fill="none"/>
+
+  <!-- Nose -->
+  <path d="M 300 242 L 297 272 L 305 272" stroke="#BF8A69" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Burgundy Velvet Lips -->
+  <path d="M 286 304 Q 300 298 314 304 Q 300 318 286 304 Z" fill="#912838"/>
+
+  <!-- Drop Pearl & Gold Earrings -->
+  <circle cx="236" cy="275" r="3" fill="url(#goldAccent)"/>
+  <line x1="236" y1="278" x2="236" y2="295" stroke="url(#goldAccent)" stroke-width="1.5"/>
+  <ellipse cx="236" cy="298" rx="4" ry="5" fill="#FBFBFD" filter="url(#glow)"/>
+
+  <circle cx="364" cy="275" r="3" fill="url(#goldAccent)"/>
+  <line x1="364" y1="278" x2="364" y2="295" stroke="url(#goldAccent)" stroke-width="1.5"/>
+  <ellipse cx="364" cy="298" rx="4" ry="5" fill="#FBFBFD" filter="url(#glow)"/>
+
+  <!-- Name Badge Overlay -->
+  <rect x="70" y="640" width="460" height="75" rx="8" fill="#0A0A0C" fill-opacity="0.9" stroke="url(#goldAccent)" stroke-width="1"/>
+  <text x="300" y="670" font-family="'Geist Sans', sans-serif" font-weight="700" font-size="20" fill="#F9F2D7" text-anchor="middle" letter-spacing="2">ELENA ROSTOVA</text>
+  <text x="300" y="694" font-family="'Geist Sans', sans-serif" font-weight="400" font-size="12" fill="#D4AF37" text-anchor="middle" letter-spacing="3">PRIVATE CLIENT ADVISOR</text>
+</svg>

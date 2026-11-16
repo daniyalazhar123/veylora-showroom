@@ -1,0 +1,107 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 750" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#141416"/>
+      <stop offset="50%" stop-color="#0a0a0b"/>
+      <stop offset="100%" stop-color="#050505"/>
+    </linearGradient>
+    <radialGradient id="goldHalo" cx="50%" cy="30%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="skinGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FCD5B5"/>
+      <stop offset="100%" stop-color="#E5AA84"/>
+    </linearGradient>
+    <linearGradient id="suitGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1c1d22"/>
+      <stop offset="50%" stop-color="#111215"/>
+      <stop offset="100%" stop-color="#0a0a0c"/>
+    </linearGradient>
+    <linearGradient id="lapelGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2a2c33"/>
+      <stop offset="100%" stop-color="#18191d"/>
+    </linearGradient>
+    <linearGradient id="goldAccent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F3E5AB"/>
+      <stop offset="50%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#9A7B1C"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="600" height="750" fill="url(#bgGrad1)"/>
+  <circle cx="300" cy="260" r="220" fill="url(#goldHalo)"/>
+
+  <!-- Subtle showroom architectural lines -->
+  <line x1="80" y1="0" x2="80" y2="750" stroke="#D4AF37" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="520" y1="0" x2="520" y2="750" stroke="#D4AF37" stroke-opacity="0.08" stroke-width="1"/>
+  <line x1="0" y1="560" x2="600" y2="560" stroke="#D4AF37" stroke-opacity="0.1" stroke-width="1"/>
+
+  <!-- Body / Formal Tuxedo Jacket -->
+  <path d="M 120 750 L 150 490 C 160 430 220 410 260 405 L 300 440 L 340 405 C 380 410 440 430 450 490 L 480 750 Z" fill="url(#suitGrad1)"/>
+
+  <!-- Silk Lapels -->
+  <path d="M 240 415 L 290 580 L 300 580 L 260 410 Z" fill="url(#lapelGrad)" stroke="#3a3c44" stroke-width="0.5"/>
+  <path d="M 360 415 L 310 580 L 300 580 L 340 410 Z" fill="url(#lapelGrad)" stroke="#3a3c44" stroke-width="0.5"/>
+
+  <!-- White Shirt & Gold Bowtie / Collar -->
+  <polygon points="280,410 320,410 310,500 290,500" fill="#FFFFFF"/>
+  <polygon points="275,420 325,420 300,435" fill="url(#goldAccent)"/>
+  <circle cx="300" cy="428" r="4" fill="#6E521B"/>
+
+  <!-- Gold Lapel Pin / VEYLORA Insignia -->
+  <circle cx="235" cy="450" r="7" fill="url(#goldAccent)" filter="url(#glow)"/>
+  <polygon points="235,445 238,452 232,452" fill="#0A0A0C"/>
+
+  <!-- Neck -->
+  <rect x="278" y="340" width="44" height="75" rx="10" fill="url(#skinGrad1)"/>
+  <!-- Neck shadow -->
+  <ellipse cx="300" cy="355" rx="22" ry="10" fill="#000000" opacity="0.15"/>
+
+  <!-- Hair (Back) -->
+  <path d="M 210 290 C 200 210 240 140 300 140 C 360 140 400 210 390 290 C 380 340 370 380 365 410 L 235 410 C 230 380 220 340 210 290 Z" fill="#1C1814"/>
+
+  <!-- Face -->
+  <path d="M 240 250 C 240 330 265 365 300 365 C 335 365 360 330 360 250 C 360 190 335 175 300 175 C 265 175 240 190 240 250 Z" fill="url(#skinGrad1)"/>
+
+  <!-- Styled Elegant Hair Front -->
+  <path d="M 235 240 C 240 180 270 145 310 145 C 360 145 370 190 365 240 C 360 210 335 185 300 185 C 265 185 245 210 235 240 Z" fill="#2E2319"/>
+  <path d="M 235 240 C 230 290 235 330 245 350 L 240 260 Z" fill="#2E2319"/>
+  <path d="M 365 240 C 370 290 365 330 355 350 L 360 260 Z" fill="#2E2319"/>
+
+  <!-- Eyes & Eyebrows -->
+  <path d="M 262 235 Q 275 230 288 235" stroke="#332211" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 312 235 Q 325 230 338 235" stroke="#332211" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <ellipse cx="275" cy="246" rx="6" ry="4" fill="#3D2B1F"/>
+  <ellipse cx="325" cy="246" rx="6" ry="4" fill="#3D2B1F"/>
+  <circle cx="277" cy="245" r="1.5" fill="#FFFFFF"/>
+  <circle cx="327" cy="245" r="1.5" fill="#FFFFFF"/>
+
+  <!-- Nose -->
+  <path d="M 300 245 L 297 275 L 305 275" stroke="#C48E68" stroke-width="2" fill="none" stroke-linecap="round"/>
+
+  <!-- Lips with elegant luxury rose-gold shade -->
+  <path d="M 285 305 Q 300 298 315 305 Q 300 320 285 305 Z" fill="#B34A58"/>
+
+  <!-- Gold Earrings -->
+  <circle cx="238" cy="275" r="3.5" fill="url(#goldAccent)"/>
+  <path d="M 238 278 L 238 295" stroke="url(#goldAccent)" stroke-width="2"/>
+  <circle cx="238" cy="296" r="4.5" fill="url(#goldAccent)" filter="url(#glow)"/>
+
+  <circle cx="362" cy="275" r="3.5" fill="url(#goldAccent)"/>
+  <path d="M 362 278 L 362 295" stroke="url(#goldAccent)" stroke-width="2"/>
+  <circle cx="362" cy="296" r="4.5" fill="url(#goldAccent)" filter="url(#glow)"/>
+
+  <!-- Name Badge Overlay -->
+  <rect x="70" y="640" width="460" height="75" rx="8" fill="#0A0A0C" fill-opacity="0.9" stroke="url(#goldAccent)" stroke-width="1"/>
+  <text x="300" y="670" font-family="'Geist Sans', sans-serif" font-weight="700" font-size="20" fill="#F9F2D7" text-anchor="middle" letter-spacing="2">SOPHIA LAURENT</text>
+  <text x="300" y="694" font-family="'Geist Sans', sans-serif" font-weight="400" font-size="12" fill="#D4AF37" text-anchor="middle" letter-spacing="3">SENIOR VIP CONCIERGE</text>
+</svg>
