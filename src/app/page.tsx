@@ -1,184 +1,169 @@
-"use client";
-
-import { useState, useEffect } from "react";
 import Link from "next/link";
-import DoorEntranceModal from "@/components/DoorEntranceModal";
-import ReceptionSection from "@/components/ReceptionSection";
-import VehicleCard from "@/components/VehicleCard";
-import TestDriveModal from "@/components/TestDriveModal";
-import ErrorBoundary from "@/components/ErrorBoundary";
-import { VEHICLES, Vehicle } from "@/lib/vehicles";
-import { Sparkles, Shield, Award, Car, Bike, Compass, KeyRound, ChevronDown } from "lucide-react";
+import { ArrowRight, Sparkles, MapPin } from "lucide-react";
+
+interface CarItem {
+  id: string;
+  name: string;
+  price: string;
+  specs: string;
+  link: string;
+}
+
+const FEATURED_CARS: CarItem[] = [
+  {
+    id: "civic-rs",
+    name: "Honda Civic RS Turbo",
+    price: "$28,000",
+    specs: "1.5L VTEC Turbo · 180 HP",
+    link: "/cars",
+  },
+  {
+    id: "escalade-v",
+    name: "Cadillac Escalade-V",
+    price: "$150,000",
+    specs: "6.2L Supercharged V8 · 682 HP",
+    link: "/cars",
+  },
+  {
+    id: "urus",
+    name: "Lamborghini Urus",
+    price: "$230,000",
+    specs: "4.0L Twin-Turbo V8 · 657 HP",
+    link: "/cars",
+  },
+];
 
 export default function HomePage() {
-  const [mounted, setMounted] = useState(false);
-  const [selectedVehicleForDrive, setSelectedVehicleForDrive] = useState<Vehicle | null>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-
   return (
-    <ErrorBoundary fallbackTitle="VEYLORA Sanctuary Showroom Encountered an Issue">
-      <div className="w-full flex flex-col bg-[#080809] text-neutral-100 min-h-screen">
-        {/* 1. Showroom Entry Modal (Shows ONCE for 2.5s on first visit, then removes from DOM) */}
-        <DoorEntranceModal />
+    <div className="w-full flex flex-col bg-[#080809] text-neutral-100 min-h-screen">
+      {/* 1. HERO SECTION */}
+      <section className="relative w-full min-h-screen flex items-center justify-center text-center px-4 sm:px-6 lg:px-8 overflow-hidden bg-[#080809]">
+        {/* Full-screen cinematic image/video placeholder background */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(212,175,55,0.14)_0%,_transparent_70%)] pointer-events-none" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#d4af3708_1px,transparent_1px),linear-gradient(to_bottom,#d4af3708_1px,transparent_1px)] bg-[size:4rem_4rem] pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#080809] via-transparent to-[#080809]/80 pointer-events-none" />
 
-        {/* Hero Section with Welcome Headline & Showroom Atmosphere */}
-        <section className="relative w-full overflow-hidden bg-gradient-to-b from-[#0F1012] via-[#080809] to-[#080809] border-b border-[#D4AF37]/30 py-20 lg:py-24">
-          <div className="absolute inset-0 bg-ambient-grid opacity-60 pointer-events-none" />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[450px] bg-gold-500/10 rounded-full blur-[130px] pointer-events-none" />
-
-          <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col items-center text-center">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#D4AF37]/40 bg-[#D4AF37]/10 text-gold-300 text-xs font-semibold tracking-[0.25em] uppercase mb-6 animate-pulse">
-              <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-              The Sanctuary Experience
-            </div>
-
-            <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 max-w-4xl leading-[1.1]">
-              Welcome to <span className="gold-text-gradient">VEYLORA</span> Showroom
-            </h1>
-
-            <p className="font-sans text-neutral-300 text-base sm:text-lg lg:text-xl max-w-2xl leading-relaxed mb-10">
-              Step across the gilded threshold into Pakistan’s preeminent automotive and motorcycle gallery. Exquisite engineering, uncompromised security, and bespoke VIP service.
-            </p>
-
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              <a
-                href="#featured-fleet"
-                className="btn-gold px-7 py-3.5 rounded-xl text-xs sm:text-sm uppercase tracking-widest font-bold flex items-center gap-2 shadow-gold hover:scale-105 active:scale-95 transition-all"
-              >
-                <span>Inspect Collection</span>
-                <ChevronDown className="w-4 h-4 text-black" />
-              </a>
-              <Link
-                href="/cars"
-                className="px-6 py-3.5 rounded-xl text-xs sm:text-sm uppercase tracking-widest font-semibold border border-[#D4AF37]/50 text-gold-300 bg-[#0F1012] hover:bg-[#D4AF37]/10 hover:border-gold-400 transition-all"
-              >
-                Explore Luxury Cars
-              </Link>
-              <Link
-                href="/bikes"
-                className="px-6 py-3.5 rounded-xl text-xs sm:text-sm uppercase tracking-widest font-semibold border border-[#D4AF37]/50 text-gold-300 bg-[#0F1012] hover:bg-[#D4AF37]/10 hover:border-gold-400 transition-all"
-              >
-                Explore Superbikes
-              </Link>
-            </div>
+        <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center py-24">
+          {/* Price Badge: "Rolls-Royce Ghost Black Badge - $462,400" (Gold) */}
+          <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-[#D4AF37]/50 bg-[#D4AF37]/10 text-[#D4AF37] text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase mb-8 shadow-[0_0_25px_rgba(212,175,55,0.2)]">
+            <Sparkles className="w-4 h-4 text-[#D4AF37]" />
+            <span>Rolls-Royce Ghost Black Badge - $462,400</span>
           </div>
-        </section>
 
-        {/* 2. Reception Section with 3 Professional Receptionists */}
-        <ReceptionSection />
+          {/* Title: "VEYLORA Beverly Hills" in Fraunces font */}
+          <h1 className="font-display text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.08]">
+            VEYLORA <span className="gold-text-gradient">Beverly Hills</span>
+          </h1>
 
-        {/* 3. Featured Rides (7/5 Split & Asymmetric Showcase) */}
-        <section id="featured-fleet" className="w-full py-24 bg-[#080809] relative">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+          {/* Subtitle: "Where Luxury Meets The Road." */}
+          <p className="font-sans text-neutral-300 text-lg sm:text-xl lg:text-2xl font-light tracking-wide max-w-2xl mb-10">
+            Where Luxury Meets The Road.
+          </p>
+
+          {/* CTA Button: "Explore Collection" (Gold) */}
+          <a
+            href="#collection"
+            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#F2E4AD] text-[#080809] font-bold text-xs sm:text-sm uppercase tracking-[0.25em] px-9 py-4 rounded-xl shadow-[0_4px_25px_rgba(212,175,55,0.3)] hover:shadow-[0_6px_35px_rgba(212,175,55,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer [will-change:transform]"
+          >
+            <span>Explore Collection</span>
+            <ArrowRight className="w-4 h-4 text-[#080809]" />
+          </a>
+        </div>
+      </section>
+
+      {/* 2. CAR GRID (Tesla-Style) */}
+      <section id="collection" className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <span className="text-[11px] uppercase tracking-[0.3em] text-[#D4AF37] font-semibold block mb-3">
+            Beverly Hills Fleet Curation
+          </span>
+          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
+            The Featured <span className="gold-text-gradient">Collection</span>
+          </h2>
+        </div>
+
+        {/* 3 Columns Desktop, 1 Column Mobile */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          {FEATURED_CARS.map((car) => (
+            <div
+              key={car.id}
+              className="flex flex-col justify-between p-6 sm:p-8 rounded-2xl bg-[#0F1012] border border-[#D4AF37]/30 shadow-[0_16px_40px_-20px_rgba(0,0,0,0.85)] hover:border-[#D4AF37] transition-transform duration-300 ease-out hover:scale-105 [will-change:transform] group"
+            >
               <div>
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-[#D4AF37]/30 bg-[#D4AF37]/10 text-gold-300 text-xs font-semibold tracking-[0.2em] uppercase mb-3">
-                  <Sparkles className="w-3.5 h-3.5 text-gold-400" />
-                  Featured Flagships
+                {/* Image Placeholder (Black box, gold border, "Image Placeholder") */}
+                <div className="relative w-full aspect-[16/10] bg-[#0A0B0D] border border-[#D4AF37]/30 rounded-xl overflow-hidden flex flex-col items-center justify-center p-6 text-center mb-6 group-hover:border-[#D4AF37]/60 transition-colors">
+                  <div className="w-12 h-12 rounded-full border border-[#D4AF37]/40 bg-[#0F1012] flex items-center justify-center mb-2">
+                    <span className="w-2 h-2 rounded-full bg-[#D4AF37] animate-pulse" />
+                  </div>
+                  <span className="text-xs uppercase tracking-[0.25em] text-[#D4AF37] font-sans font-semibold mb-1">
+                    Image Placeholder
+                  </span>
+                  <span className="text-[10px] text-neutral-500 uppercase tracking-wider font-sans">
+                    {car.specs}
+                  </span>
                 </div>
-                <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight">
-                  The Curated <span className="gold-text-gradient">Showroom Floor</span>
-                </h2>
+
+                {/* Name & Price */}
+                <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">
+                  {car.name}
+                </h3>
+                <p className="font-display text-2xl font-normal text-[#D4AF37] mb-6">
+                  {car.price}
+                </p>
               </div>
-              <div className="flex items-center gap-4">
-                <Link
-                  href="/cars"
-                  className="px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider font-semibold border border-[#D4AF37]/40 text-gold-300 hover:bg-[#D4AF37]/10 bg-[#0F1012] flex items-center gap-2 transition-all"
-                >
-                  <Car className="w-4 h-4 text-gold-400" />
-                  <span>All Cars ({VEHICLES.filter((v) => v.type === "car").length})</span>
-                </Link>
-                <Link
-                  href="/bikes"
-                  className="px-5 py-2.5 rounded-lg text-xs uppercase tracking-wider font-semibold border border-[#D4AF37]/40 text-gold-300 hover:bg-[#D4AF37]/10 bg-[#0F1012] flex items-center gap-2 transition-all"
-                >
-                  <Bike className="w-4 h-4 text-gold-400" />
-                  <span>All Bikes ({VEHICLES.filter((v) => v.type === "bike").length})</span>
-                </Link>
-              </div>
+
+              {/* View Details Button */}
+              <Link
+                href={car.link}
+                className="w-full py-3.5 px-5 rounded-xl border border-[#D4AF37]/40 text-[#F2E4AD] hover:bg-[#D4AF37]/10 hover:border-[#D4AF37] text-xs uppercase tracking-[0.2em] font-semibold text-center transition-all duration-300 [will-change:transform]"
+              >
+                View Details
+              </Link>
             </div>
+          ))}
+        </div>
+      </section>
 
-            {!mounted ? (
-              <div className="space-y-12 animate-pulse">
-                <div className="h-80 rounded-2xl bg-[#0F1012] border border-[#D4AF37]/30" />
-                <div className="h-80 rounded-2xl bg-[#0F1012] border border-[#D4AF37]/20" />
-              </div>
-            ) : (
-              <div className="space-y-12">
-                <VehicleCard
-                  vehicle={VEHICLES[0]} // Civic RS
-                  onBookTestDrive={(v) => setSelectedVehicleForDrive(v)}
-                />
-                <VehicleCard
-                  vehicle={VEHICLES[2]} // Escalade-V
-                  onBookTestDrive={(v) => setSelectedVehicleForDrive(v)}
-                />
-                <VehicleCard
-                  vehicle={VEHICLES[3]} // Porsche 911 GT3
-                  onBookTestDrive={(v) => setSelectedVehicleForDrive(v)}
-                />
-                <VehicleCard
-                  vehicle={VEHICLES[5]} // Honda CG 125 Special Edition
-                  onBookTestDrive={(v) => setSelectedVehicleForDrive(v)}
-                />
-              </div>
-            )}
+      {/* 3. CALL TO ACTION */}
+      <section className="w-full py-24 sm:py-32 px-4 sm:px-6 lg:px-8 border-t border-[#D4AF37]/20 bg-gradient-to-b from-[#080809] to-[#0F1012] text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_rgba(212,175,55,0.08)_0%,_transparent_60%)] pointer-events-none" />
+
+        <div className="relative z-10 max-w-3xl mx-auto flex flex-col items-center">
+          <h2 className="font-display text-3xl sm:text-5xl font-bold text-white tracking-tight mb-6">
+            Ready to Experience Luxury?
+          </h2>
+          <p className="text-neutral-300 text-sm sm:text-base max-w-lg mb-10 font-sans">
+            Schedule a private test drive at our Beverly Hills showroom or request white-glove VIP estate delivery.
+          </p>
+
+          <Link
+            href="/test-drive"
+            className="inline-flex items-center gap-3 bg-[#D4AF37] hover:bg-[#F2E4AD] text-[#080809] font-bold text-xs sm:text-sm uppercase tracking-[0.25em] px-10 py-4 rounded-xl shadow-[0_4px_25px_rgba(212,175,55,0.3)] hover:shadow-[0_6px_35px_rgba(212,175,55,0.5)] transition-all duration-300 transform hover:-translate-y-0.5 active:translate-y-0 cursor-pointer [will-change:transform]"
+          >
+            <span>Book Your Test Drive</span>
+            <ArrowRight className="w-4 h-4 text-[#080809]" />
+          </Link>
+        </div>
+      </section>
+
+      {/* 4. FOOTER */}
+      <footer className="w-full py-12 px-4 sm:px-6 lg:px-8 border-t border-[#D4AF37]/20 bg-[#050506] text-neutral-400 font-sans text-xs">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+          <div>
+            <span className="font-display text-base font-bold text-white tracking-[0.15em] block mb-1">
+              VEYLORA USA - Beverly Hills
+            </span>
+            <p className="flex items-center justify-center sm:justify-start gap-1.5 text-neutral-400">
+              <MapPin className="w-3.5 h-3.5 text-[#D4AF37] shrink-0" />
+              <span>445 N Canon Drive, Beverly Hills, CA 90210</span>
+            </p>
           </div>
-        </section>
 
-        {/* 4. Luxury Sanctuary Pillars */}
-        <section className="w-full py-20 bg-[#0F1012] border-y border-[#D4AF37]/30">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="p-8 rounded-2xl bg-[#151619] border border-[#D4AF37]/30 space-y-4">
-                <div className="w-12 h-12 rounded-full border border-gold-500/50 bg-gold-500/10 flex items-center justify-center">
-                  <Compass className="w-6 h-6 text-gold-400" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-white">
-                  360° Studio Visualization
-                </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed">
-                  Interact with every millimeter of mechanical perfection in real-time. Rotate from aerodynamic splitters to titanium exhaust geometry with customizable bespoke paints.
-                </p>
-              </div>
-
-              <div className="p-8 rounded-2xl bg-[#151619] border border-[#D4AF37]/30 space-y-4">
-                <div className="w-12 h-12 rounded-full border border-gold-500/50 bg-gold-500/10 flex items-center justify-center">
-                  <Award className="w-6 h-6 text-gold-400" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-white">
-                  Dedicated VIP Reception
-                </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed">
-                  Every reservation is overseen by our formal concierge team. Experience white-glove arrival protocols, private track briefings, and transparent flexible financing options.
-                </p>
-              </div>
-
-              <div className="p-8 rounded-2xl bg-[#151619] border border-[#D4AF37]/30 space-y-4">
-                <div className="w-12 h-12 rounded-full border border-gold-500/50 bg-gold-500/10 flex items-center justify-center">
-                  <Shield className="w-6 h-6 text-gold-400" />
-                </div>
-                <h3 className="font-display text-xl font-bold text-white">
-                  Cryptographic Sanctuary Security
-                </h3>
-                <p className="text-xs text-neutral-400 leading-relaxed">
-                  Client privacy is immutable. Our architecture utilizes 1-hour HS256 JWTs locked inside httpOnly cookies, Zod schema sanitization, and automated rate limiting to protect your data.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Test Drive Modal */}
-        <TestDriveModal
-          vehicle={selectedVehicleForDrive}
-          isOpen={!!selectedVehicleForDrive}
-          onClose={() => setSelectedVehicleForDrive(null)}
-        />
-      </div>
-    </ErrorBoundary>
+          <p className="text-neutral-500">
+            © 2026 VEYLORA USA. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </div>
   );
 }

@@ -78,11 +78,11 @@ export default function Footer() {
               </div>
               <div className="flex items-start gap-2 pt-2">
                 <MapPin className="w-3.5 h-3.5 text-gold-400 mt-0.5 shrink-0" />
-                <span>Boulevard 7, Sector F-6 Diplomatic Enclave, Islamabad</span>
+                <span>445 N Canon Drive, Beverly Hills, CA 90210</span>
               </div>
               <div className="flex items-center gap-2 pt-1">
                 <Phone className="w-3.5 h-3.5 text-gold-400 shrink-0" />
-                <span>+92 (51) 849-2000</span>
+                <span>+1 (310) 849-2000</span>
               </div>
               <div className="flex items-center gap-2">
                 <Mail className="w-3.5 h-3.5 text-gold-400 shrink-0" />
@@ -114,7 +114,7 @@ export default function Footer() {
 
         {/* Bottom copyright */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-neutral-400 gap-4">
-          <p>© {new Date().getFullYear()} VEYLORA Sanctuary Ltd. All rights reserved.</p>
+          <p>© 2026 VEYLORA USA - Beverly Hills. All rights reserved.</p>
           <div className="flex flex-wrap items-center gap-6">
             <Link href="/privacy" className="hover:text-gold-400 transition-colors">
               Privacy Policy
